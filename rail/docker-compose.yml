@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  n8n:
+    # Dockerfile'ı build etmesini söylüyoruz
+    build: .
+    ports:
+      - "5678:5678"
+    environment:
+      # Railway'e hangi URL'de çalıştığımızı söyleyeceğiz
+      # Bu değişkenleri Railway arayüzünden gireceğiz.
+      - N8N_HOST=${N8N_HOST}
+      - WEBHOOK_URL=${WEBHOOK_URL}
+    volumes:
+      # Verilerin kalıcı olmasını sağlıyoruz
+      - n8n_data:/home/node/.n8n
+
+volumes:
+  n8n_data:
