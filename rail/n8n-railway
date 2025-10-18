@@ -1,7 +1,0 @@
-# n8n'in resmi Docker imajını temel al
-FROM n8nio/n8n
-
-# Gerekli olan WhatsApp topluluk node'unu kur
-# Bu satır, n8n'in kendi giriş komut dosyasının (entrypoint) 
-# bu paketi otomatik olarak kurmasını sağlar.
-ENV N8N_CUSTOM_EXTENSIONS=n8n-nodes-whatsapp-web.js
